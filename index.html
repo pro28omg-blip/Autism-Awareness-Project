@@ -11,7 +11,7 @@
       overflow-x: hidden;
     }
 
-    /* 🧩 ANIMATED PUZZLE BACKGROUND */
+    /* 🧩 BACKGROUND */
     body::before {
       content: "";
       position: fixed;
@@ -37,17 +37,27 @@
       text-align: center;
     }
 
+    /* 🔘 BUTTON ANIMATION */
     .navbar a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
       display: inline-block;
-      transition: transform 0.2s ease;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
     }
 
     .navbar a:hover {
-      transform: scale(1.1);
+      background: white;
+      color: #4a90e2;
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .navbar a:active {
+      transform: scale(0.95);
     }
 
     /* HERO */
@@ -68,14 +78,14 @@
       opacity: 0.9;
     }
 
-    /* IMAGE */
+    /* 🖼 IMAGE */
     .hero-img {
       width: 100%;
-      max-width: 700px;
+      max-width: 750px;
       display: block;
-      margin: 20px auto;
+      margin: 25px auto;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
     /* CONTAINER */
@@ -116,12 +126,12 @@
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVBAR BUTTONS -->
 <div class="navbar">
   <a href="#">Home</a>
   <a href="#awareness">Awareness</a>
   <a href="#about">About</a>
-  <a href="#issue">Global Issue</a>
+  <a href="#issue">Issue</a>
   <a href="#solutions">Solutions</a>
 </div>
 
@@ -131,9 +141,9 @@
   <p>Understanding perspectives challenges and inclusion</p>
 </div>
 
-<!-- AUTISM IMAGE -->
+<!-- 🖼 WORKING AUTISM IMAGE -->
 <img class="hero-img"
-src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Autism_spectrum_flag.svg"
+src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Autism-awareness-symbol.png"
 alt="Autism awareness symbol">
 
 <div class="container">
@@ -145,27 +155,17 @@ alt="Autism awareness symbol">
 
   <div class="card" id="about">
     <h2>About This Project</h2>
-    <p>This Global Perspectives project explores autism awareness focusing on global understanding challenges and solutions for inclusion</p>
+    <p>This Global Perspectives project explores autism awareness focusing on global understanding challenges and solutions</p>
   </div>
 
   <div class="card" id="issue">
     <h2>Global Issue</h2>
-    <p>Autism is a neurodevelopmental condition affecting communication and behavior awareness varies across countries</p>
-  </div>
-
-  <div class="card" id="perspectives">
-    <h2>Different Perspectives</h2>
-    <p>Some countries have strong support systems while others still face stigma and limited awareness</p>
+    <p>Autism is a neurodevelopmental condition affecting communication and behavior worldwide</p>
   </div>
 
   <div class="card" id="solutions">
     <h2>Solutions</h2>
-    <p>Education inclusion early diagnosis and awareness campaigns can significantly improve lives</p>
-  </div>
-
-  <div class="card">
-    <h2>Key Message</h2>
-    <p>Every individual with autism experiences the world differently inclusion and understanding are essential</p>
+    <p>Education inclusion early diagnosis and awareness campaigns improve lives</p>
   </div>
 
 </div>
