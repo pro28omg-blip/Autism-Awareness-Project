@@ -5,26 +5,31 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f2f6ff;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #e0f7ff, #f7e9ff);
       color: #333;
     }
 
     header {
-      background: #4a90e2;
+      background: linear-gradient(90deg, #4a90e2, #7b5cff);
       color: white;
-      padding: 40px;
+      padding: 50px 20px;
       text-align: center;
     }
 
     h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 40px;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
     }
 
     .container {
-      width: 80%;
+      width: 85%;
       margin: auto;
       padding: 20px;
     }
@@ -33,8 +38,14 @@
       background: white;
       padding: 20px;
       margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-left: 6px solid #4a90e2;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
     }
 
     h2 {
@@ -44,7 +55,8 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #ddd;
+      background: #4a90e2;
+      color: white;
       margin-top: 30px;
     }
   </style>
@@ -66,22 +78,22 @@
 
   <div class="card">
     <h2>🌍 Global Issue</h2>
-    <p>Autism is a neurodevelopmental condition that affects communication and behavior. Awareness and diagnosis vary across countries due to differences in education and healthcare systems.</p>
+    <p>Autism is a neurodevelopmental condition that affects communication and behavior. Awareness varies across countries.</p>
   </div>
 
   <div class="card">
     <h2>👀 Different Perspectives</h2>
-    <p>Some societies are highly supportive with strong inclusion systems, while others still face stigma and limited understanding of autism.</p>
+    <p>Some countries have strong support systems, while others still face stigma and lack of awareness.</p>
   </div>
 
   <div class="card">
     <h2>💡 Solutions</h2>
-    <p>Better education, awareness campaigns, inclusive schools, and early diagnosis can greatly improve support for individuals with autism.</p>
+    <p>Education, inclusion, early diagnosis, and awareness campaigns can improve lives significantly.</p>
   </div>
 
   <div class="card">
     <h2>📊 Key Message</h2>
-    <p>Every individual with autism experiences the world differently. Inclusion and understanding are essential for a fair society.</p>
+    <p>Every individual with autism experiences the world differently. Inclusion and understanding matter.</p>
   </div>
 
 </div>
