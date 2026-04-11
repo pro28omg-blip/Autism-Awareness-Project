@@ -8,59 +8,21 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f7ff;
-      overflow-x: hidden;
     }
 
-    /* 🧩 BACKGROUND */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background-image: url("https://www.transparenttextures.com/patterns/puzzle.png");
-      opacity: 0.12;
-      animation: moveBg 25s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes moveBg {
-      0% { transform: translate(0,0); }
-      100% { transform: translate(-200px,-200px); }
-    }
-
-    /* NAVBAR */
     .navbar {
       background: #4a90e2;
       padding: 15px;
       text-align: center;
     }
 
-    /* 🔘 BUTTON ANIMATION */
     .navbar a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      position: relative;
     }
 
-    .navbar a:hover {
-      background: white;
-      color: #4a90e2;
-      transform: translateY(-3px) scale(1.05);
-    }
-
-    .navbar a:active {
-      transform: scale(0.95);
-    }
-
-    /* HERO */
     .hero {
       background: linear-gradient(90deg, #4a90e2, #7b5cff);
       color: white;
@@ -68,34 +30,12 @@
       padding: 60px 20px;
     }
 
-    .hero h1 {
-      margin: 0;
-      font-size: 42px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    /* 🖼 IMAGE */
-    .hero-img {
-      width: 100%;
-      max-width: 750px;
-      display: block;
-      margin: 25px auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
-
-    /* CONTAINER */
     .container {
       width: 85%;
       margin: auto;
       padding: 20px;
     }
 
-    /* CARDS */
     .card {
       background: white;
       padding: 20px;
@@ -103,11 +43,6 @@
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       border-left: 6px solid #4a90e2;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
     }
 
     h2 {
@@ -119,14 +54,12 @@
       padding: 20px;
       background: #4a90e2;
       color: white;
-      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR BUTTONS -->
 <div class="navbar">
   <a href="#">Home</a>
   <a href="#awareness">Awareness</a>
@@ -135,37 +68,31 @@
   <a href="#solutions">Solutions</a>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <h1>Autism Awareness Project</h1>
   <p>Understanding perspectives challenges and inclusion</p>
 </div>
 
-<!-- 🖼 WORKING AUTISM IMAGE -->
-<img class="hero-img"
-src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Autism-awareness-symbol.png"
-alt="Autism awareness symbol">
-
 <div class="container">
 
-  <div class="card" id="awareness">
+  <div class="card">
     <h2>Awareness</h2>
-    <p>Autism awareness promotes understanding acceptance and inclusion in society</p>
+    <p>Autism awareness promotes understanding and inclusion</p>
   </div>
 
-  <div class="card" id="about">
-    <h2>About This Project</h2>
-    <p>This Global Perspectives project explores autism awareness focusing on global understanding challenges and solutions</p>
+  <div class="card">
+    <h2>About</h2>
+    <p>Global Perspectives project on autism awareness</p>
   </div>
 
-  <div class="card" id="issue">
+  <div class="card">
     <h2>Global Issue</h2>
-    <p>Autism is a neurodevelopmental condition affecting communication and behavior worldwide</p>
+    <p>Autism affects communication and behavior worldwide</p>
   </div>
 
-  <div class="card" id="solutions">
+  <div class="card">
     <h2>Solutions</h2>
-    <p>Education inclusion early diagnosis and awareness campaigns improve lives</p>
+    <p>Education inclusion and awareness campaigns help society</p>
   </div>
 
 </div>
