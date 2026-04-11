@@ -11,7 +11,7 @@
       background: #f4f7ff;
     }
 
-    /* 🌐 ANIMATED PUZZLE BACKGROUND */
+    /* 🧩 ANIMATED PUZZLE BACKGROUND */
     body::before {
       content: "";
       position: fixed;
@@ -20,7 +20,7 @@
       width: 200%;
       height: 200%;
       background-image: url("https://www.transparenttextures.com/patterns/puzzle.png");
-      opacity: 0.15;
+      opacity: 0.12;
       animation: moveBg 20s linear infinite;
       z-index: -1;
     }
@@ -42,7 +42,6 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      transition: transform 0.2s ease;
     }
 
     .navbar a:hover {
@@ -67,6 +66,14 @@
       opacity: 0.9;
     }
 
+    /* IMAGE HEADER */
+    .hero-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
     /* CONTAINER */
     .container {
       width: 85%;
@@ -82,20 +89,10 @@
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       border-left: 6px solid #4a90e2;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
     }
 
     h2 {
       color: #4a90e2;
-    }
-
-    /* BUTTON EFFECT */
-    .btn:active {
-      transform: scale(0.95);
     }
 
     footer {
@@ -124,11 +121,16 @@
   <p><strong>Awareness</strong></p>
 </div>
 
+<!-- 🧩 REAL AUTISM-AWARENESS IMAGE -->
+<img class="hero-img"
+src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1400&q=80"
+alt="Autism awareness puzzle symbol">
+
 <div class="container">
 
   <div class="card" id="awareness">
     <h2>Awareness</h2>
-    <p>Autism awareness is important to promote understanding acceptance and inclusion in society</p>
+    <p>Autism awareness promotes understanding acceptance and inclusion in society</p>
   </div>
 
   <div class="card" id="about">
@@ -138,17 +140,17 @@
 
   <div class="card" id="issue">
     <h2>Global Issue</h2>
-    <p>Autism is a neurodevelopmental condition that affects communication and behavior Awareness varies across countries</p>
+    <p>Autism is a neurodevelopmental condition affecting communication and behavior awareness varies globally</p>
   </div>
 
   <div class="card" id="solutions">
     <h2>Solutions</h2>
-    <p>Education inclusion early diagnosis and awareness campaigns can significantly improve lives</p>
+    <p>Education inclusion early diagnosis and awareness campaigns improve lives significantly</p>
   </div>
 
   <div class="card">
     <h2>Key Message</h2>
-    <p>Every individual with autism experiences the world differently Inclusion and understanding are essential</p>
+    <p>Every individual with autism experiences the world differently inclusion and understanding are essential</p>
   </div>
 
 </div>
