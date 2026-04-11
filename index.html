@@ -7,8 +7,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      overflow-x: hidden;
       background: #f4f7ff;
+      overflow-x: hidden;
     }
 
     /* 🧩 ANIMATED PUZZLE BACKGROUND */
@@ -21,7 +21,7 @@
       height: 200%;
       background-image: url("https://www.transparenttextures.com/patterns/puzzle.png");
       opacity: 0.12;
-      animation: moveBg 20s linear infinite;
+      animation: moveBg 25s linear infinite;
       z-index: -1;
     }
 
@@ -42,6 +42,8 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      transition: transform 0.2s ease;
     }
 
     .navbar a:hover {
@@ -66,14 +68,6 @@
       opacity: 0.9;
     }
 
-    /* IMAGE HEADER */
-    .hero-img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-
     /* CONTAINER */
     .container {
       width: 85%;
@@ -89,12 +83,18 @@
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       border-left: 6px solid #4a90e2;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     h2 {
       color: #4a90e2;
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
@@ -107,6 +107,7 @@
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
   <a href="#">Home</a>
   <a href="#awareness">Awareness</a>
@@ -115,16 +116,12 @@
   <a href="#solutions">Solutions</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <h1>Autism Awareness Project</h1>
   <p>Understanding perspectives challenges and inclusion</p>
-  <p><strong>Awareness</strong></p>
+  <p><strong>Awareness Matters</strong></p>
 </div>
-
-<!-- 🧩 REAL AUTISM-AWARENESS IMAGE -->
-<img class="hero-img"
-src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1400&q=80"
-alt="Autism awareness puzzle symbol">
 
 <div class="container">
 
@@ -140,12 +137,17 @@ alt="Autism awareness puzzle symbol">
 
   <div class="card" id="issue">
     <h2>Global Issue</h2>
-    <p>Autism is a neurodevelopmental condition affecting communication and behavior awareness varies globally</p>
+    <p>Autism is a neurodevelopmental condition affecting communication and behavior awareness varies across countries</p>
+  </div>
+
+  <div class="card" id="perspectives">
+    <h2>Different Perspectives</h2>
+    <p>Some countries have strong support systems while others still face stigma and limited awareness</p>
   </div>
 
   <div class="card" id="solutions">
     <h2>Solutions</h2>
-    <p>Education inclusion early diagnosis and awareness campaigns improve lives significantly</p>
+    <p>Education inclusion early diagnosis and awareness campaigns can significantly improve lives</p>
   </div>
 
   <div class="card">
