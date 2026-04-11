@@ -7,33 +7,49 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #e0f7ff, #f7e9ff);
-      color: #333;
+      background: #f4f7ff;
     }
 
-    header {
-      background: linear-gradient(90deg, #4a90e2, #7b5cff);
-      color: white;
-      padding: 50px 20px;
+    /* NAVBAR */
+    .navbar {
+      background: #4a90e2;
+      padding: 15px;
       text-align: center;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 40px;
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    header p {
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(90deg, #4a90e2, #7b5cff);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    .hero p {
       font-size: 18px;
       opacity: 0.9;
     }
 
+    /* CONTAINER */
     .container {
       width: 85%;
       margin: auto;
       padding: 20px;
     }
 
+    /* CARDS */
     .card {
       background: white;
       padding: 20px;
@@ -41,17 +57,26 @@
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       border-left: 6px solid #4a90e2;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
     }
 
     h2 {
       color: #4a90e2;
     }
 
+    /* IMAGE BOX */
+    .image-box {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
@@ -64,36 +89,50 @@
 
 <body>
 
-<header>
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#issue">Global Issue</a>
+  <a href="#perspectives">Perspectives</a>
+  <a href="#solutions">Solutions</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
   <h1>Autism Awareness</h1>
   <p>Understanding perspectives, challenges, and inclusion</p>
-</header>
+</div>
 
 <div class="container">
+
+  <!-- IMAGE -->
+  <div class="image-box">
+    <img src="https://images.unsplash.com/photo-1581091012184-7c4f3b2c7b32" alt="awareness">
+  </div>
 
   <div class="card">
     <h2>📌 About This Project</h2>
     <p>This Global Perspectives project explores autism awareness, focusing on global understanding, challenges, and solutions for inclusion.</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="issue">
     <h2>🌍 Global Issue</h2>
     <p>Autism is a neurodevelopmental condition that affects communication and behavior. Awareness varies across countries.</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="perspectives">
     <h2>👀 Different Perspectives</h2>
-    <p>Some countries have strong support systems, while others still face stigma and lack of awareness.</p>
+    <p>Some countries have strong support systems, while others still face stigma and limited awareness.</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="solutions">
     <h2>💡 Solutions</h2>
-    <p>Education, inclusion, early diagnosis, and awareness campaigns can improve lives significantly.</p>
+    <p>Education, inclusion, early diagnosis, and awareness campaigns can significantly improve lives.</p>
   </div>
 
   <div class="card">
     <h2>📊 Key Message</h2>
-    <p>Every individual with autism experiences the world differently. Inclusion and understanding matter.</p>
+    <p>Every individual with autism experiences the world differently. Inclusion and understanding are essential.</p>
   </div>
 
 </div>
