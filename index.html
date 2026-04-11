@@ -8,8 +8,29 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f7ff;
+      overflow-x: hidden;
     }
 
+    /* 🧩 ANIMATED PUZZLE BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: url("https://www.transparenttextures.com/patterns/puzzle.png");
+      opacity: 0.12;
+      animation: moveBg 25s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBg {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(-200px,-200px); }
+    }
+
+    /* NAVBAR */
     .navbar {
       background: #4a90e2;
       padding: 15px;
@@ -21,8 +42,15 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      transition: transform 0.2s ease;
     }
 
+    .navbar a:hover {
+      transform: scale(1.1);
+    }
+
+    /* HERO */
     .hero {
       background: linear-gradient(90deg, #4a90e2, #7b5cff);
       color: white;
@@ -30,12 +58,34 @@
       padding: 60px 20px;
     }
 
+    .hero h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* IMAGE */
+    .hero-img {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* CONTAINER */
     .container {
       width: 85%;
       margin: auto;
       padding: 20px;
     }
 
+    /* CARDS */
     .card {
       background: white;
       padding: 20px;
@@ -43,6 +93,11 @@
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       border-left: 6px solid #4a90e2;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     h2 {
@@ -54,45 +109,63 @@
       padding: 20px;
       background: #4a90e2;
       color: white;
+      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
   <a href="#">Home</a>
   <a href="#awareness">Awareness</a>
   <a href="#about">About</a>
-  <a href="#issue">Issue</a>
+  <a href="#issue">Global Issue</a>
   <a href="#solutions">Solutions</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <h1>Autism Awareness Project</h1>
   <p>Understanding perspectives challenges and inclusion</p>
 </div>
 
+<!-- AUTISM IMAGE -->
+<img class="hero-img"
+src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Autism_spectrum_flag.svg"
+alt="Autism awareness symbol">
+
 <div class="container">
 
-  <div class="card">
+  <div class="card" id="awareness">
     <h2>Awareness</h2>
-    <p>Autism awareness promotes understanding and inclusion</p>
+    <p>Autism awareness promotes understanding acceptance and inclusion in society</p>
   </div>
 
-  <div class="card">
-    <h2>About</h2>
-    <p>Global Perspectives project on autism awareness</p>
+  <div class="card" id="about">
+    <h2>About This Project</h2>
+    <p>This Global Perspectives project explores autism awareness focusing on global understanding challenges and solutions for inclusion</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="issue">
     <h2>Global Issue</h2>
-    <p>Autism affects communication and behavior worldwide</p>
+    <p>Autism is a neurodevelopmental condition affecting communication and behavior awareness varies across countries</p>
+  </div>
+
+  <div class="card" id="perspectives">
+    <h2>Different Perspectives</h2>
+    <p>Some countries have strong support systems while others still face stigma and limited awareness</p>
+  </div>
+
+  <div class="card" id="solutions">
+    <h2>Solutions</h2>
+    <p>Education inclusion early diagnosis and awareness campaigns can significantly improve lives</p>
   </div>
 
   <div class="card">
-    <h2>Solutions</h2>
-    <p>Education inclusion and awareness campaigns help society</p>
+    <h2>Key Message</h2>
+    <p>Every individual with autism experiences the world differently inclusion and understanding are essential</p>
   </div>
 
 </div>
