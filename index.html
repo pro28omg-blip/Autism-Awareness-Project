@@ -73,11 +73,18 @@
     #issue { background: linear-gradient(135deg, #ffd89b, #19547b); }
     #solutions { background: linear-gradient(135deg, #00c9ff, #92fe9d); }
 
+    /* PAGES */
     .page {
       display: none;
-      padding: 40px;
+      padding: 60px;
       text-align: center;
-      line-height: 1.8;
+      line-height: 2;
+      font-size: 20px; /* 🔥 BIGGER TEXT */
+    }
+
+    .page h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
     }
 
     img {
@@ -146,82 +153,86 @@
   </div>
 </div>
 
-<!-- 🧠 AWARENESS PAGE -->
+<!-- 🧠 AWARENESS -->
 <div id="p1" class="page">
   <h1>Awareness</h1>
 
-  Autism awareness is about understanding neurodiversity and promoting acceptance of individuals with autism spectrum disorder (ASD).  
-  Autism is not a disease, but a developmental condition that affects communication, social interaction, and behavior.
+  <p>
+    Autism awareness is about understanding neurodiversity and promoting inclusion in society.
+    Autism is a spectrum condition affecting communication, behavior, and sensory processing differently in each person.
+  </p>
 
-  <br><br>
+  <p>
+    Awareness reduces stigma and helps create more inclusive schools and workplaces worldwide.
+    Temple Grandin is a well-known autistic scientist who changed livestock systems using her unique thinking.
+  </p>
 
-  Increased awareness helps reduce stigma and encourages inclusion in schools and workplaces.  
-  A famous real-life example is Temple Grandin, an autistic scientist who changed the livestock industry with her unique thinking style.
-
-  <br><br>
-
-  Awareness campaigns such as World Autism Awareness Day (April 2) help educate people globally and promote acceptance.
+  <p>
+    Global campaigns like World Autism Awareness Day help increase understanding and acceptance.
+  </p>
 
   <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- 📘 ABOUT PAGE -->
+<!-- 📘 ABOUT -->
 <div id="p2" class="page">
   <h1>About</h1>
 
-  Autism is a spectrum condition, meaning it affects individuals in different ways and to different degrees.  
-  Some people may need significant support, while others live independently.
+  <p>
+    This project explores autism from a global perspective, focusing on education, inclusion, and awareness.
+  </p>
 
-  <br><br>
+  <p>
+    Autism is understood differently across countries depending on healthcare and education systems.
+  </p>
 
-  This project explores how autism is understood globally, including differences in education systems, healthcare access, and cultural awareness.
-
-  <br><br>
-
-  In many developed countries, early diagnosis programs and therapy support exist, while in others awareness is still developing.
+  <p>
+    Developed countries often provide early diagnosis, while others still lack awareness and resources.
+  </p>
 
   <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- 🌍 GLOBAL ISSUE PAGE -->
+<!-- 🌍 GLOBAL ISSUE -->
 <div id="p3" class="page">
   <h1>Global Issue</h1>
 
-  Autism is a global issue because support systems are unequal across countries.  
-  This creates major differences in education, diagnosis, and quality of life.
+  <p>
+    Autism support is not equal worldwide, creating major gaps in education and healthcare.
+  </p>
 
-  <br><br>
+  <p>
+    Some countries provide early intervention therapy, while others struggle with awareness and diagnosis.
+  </p>
 
-  In high-income countries, children often receive early intervention therapies that improve communication and learning outcomes.  
-  However, in lower-income regions, autism is often misunderstood or diagnosed late.
-
-  <br><br>
-
-  UNESCO reports show that many autistic children worldwide are excluded from mainstream education systems.
+  <p>
+    UNESCO reports show many autistic children are excluded from mainstream education systems.
+  </p>
 
   <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5">
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- 💡 SOLUTIONS PAGE -->
+<!-- 💡 SOLUTIONS -->
 <div id="p4" class="page">
   <h1>Solutions</h1>
 
-  Solving autism-related challenges requires global awareness and inclusive education systems.
+  <p>
+    Solutions include improving education, awareness, and early diagnosis systems globally.
+  </p>
 
-  <br><br>
+  <p>
+    Inclusive classrooms help autistic students learn better and feel accepted.
+  </p>
 
-  Schools should adopt inclusive teaching methods and train teachers to support neurodiverse students.  
-  Governments can improve access to early diagnosis and therapy programs.
-
-  <br><br>
-
-  Public awareness campaigns help reduce stigma and encourage acceptance in society.
+  <p>
+    Governments and schools must work together to reduce stigma and improve access to support.
+  </p>
 
   <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178">
 
@@ -251,7 +262,6 @@ function showPage(id){
   document.getElementById(id).style.display='block';
 }
 
-/* COOKIE SYSTEM */
 function spawnCookie(){
   const c=document.createElement("div");
   c.className="cookie";
