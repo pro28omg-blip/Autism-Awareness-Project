@@ -8,9 +8,9 @@
       margin: 0;
       font-family: Arial, sans-serif;
 
-      /* 🌈 NEW FULL WEBSITE GRADIENT */
-      background: linear-gradient(120deg, #e0f7ff, #f3e7ff, #fff1e6);
-      background-attachment: fixed;
+      /* 🌈 FIXED GLOBAL BACKGROUND GRADIENT (NOW WORKS) */
+      background: linear-gradient(120deg, #dbeafe, #fce7f3, #ecfeff);
+      min-height: 100vh;
     }
 
     /* NAVBAR */
@@ -20,6 +20,7 @@
       text-align: center;
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
 
     .navbar a {
@@ -57,7 +58,6 @@
       padding: 20px;
     }
 
-    /* CARDS */
     .card {
       padding: 25px;
       margin: 25px 0;
@@ -71,13 +71,13 @@
       transform: translateY(-6px);
     }
 
-    /* SECTION COLORS (kept same gradients) */
+    /* SECTION COLORS */
     #awareness { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
     #about { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
     #issue { background: linear-gradient(135deg, #ffd89b, #19547b); }
     #solutions { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+    #team { background: linear-gradient(135deg, #ffe29f, #ffa99f); }
 
-    /* PAGES */
     .page {
       display: none;
       padding: 40px;
@@ -106,6 +106,7 @@
       color: white;
       border-radius: 8px;
       cursor: pointer;
+      display: inline-block;
       transition: 0.3s;
     }
 
@@ -113,13 +114,22 @@
       transform: scale(1.1);
     }
 
+    .team-box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="navbar">
   <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('team')">Team</a>
 </div>
 
 <!-- HOME -->
@@ -139,15 +149,14 @@
 
 <!-- AWARENESS -->
 <div id="p1" class="page">
-  <h1 style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb);padding:20px;border-radius:10px;">Awareness</h1>
-
+  <h1>Awareness</h1>
   <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
 
   <p>
-  Autism awareness is essential in promoting understanding acceptance and inclusion in society.
-  It helps people recognize that autism is a spectrum meaning individuals experience it differently.
-  Increased awareness reduces stereotypes and discrimination while encouraging supportive environments
-  for individuals with autism in schools workplaces and communities.
+  Autism awareness is essential in promoting understanding acceptance and inclusion in society 
+  It helps people recognize that autism is a spectrum meaning individuals experience it differently 
+  Increased awareness reduces stereotypes and discrimination while encouraging supportive environments 
+  for individuals with autism in schools workplaces and communities
   </p>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
@@ -155,14 +164,13 @@
 
 <!-- ABOUT -->
 <div id="p2" class="page">
-  <h1 style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee);padding:20px;border-radius:10px;">About</h1>
-
+  <h1>About</h1>
   <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
 
   <p>
-  This Global Perspectives project explores autism awareness by analyzing different viewpoints from around the world.
-  It focuses on how societies understand autism, the challenges individuals face, and the importance of inclusive practices.
-  The project also evaluates solutions that can improve awareness and quality of life for individuals on the autism spectrum.
+  This Global Perspectives project explores autism awareness by analyzing different viewpoints from around the world 
+  It focuses on how societies understand autism the challenges individuals face and the importance of inclusive practices 
+  The project also evaluates solutions that can improve awareness and quality of life for individuals on the autism spectrum
   </p>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
@@ -170,15 +178,14 @@
 
 <!-- ISSUE -->
 <div id="p3" class="page">
-  <h1 style="background:linear-gradient(135deg,#ffd89b,#19547b);padding:20px;border-radius:10px;">Global Issue</h1>
-
+  <h1>Global Issue</h1>
   <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5">
 
   <p>
-  Autism is a global issue that affects millions of individuals and their families across different countries.
-  However awareness understanding and support systems vary significantly depending on cultural economic and educational factors.
-  In some regions there is strong support and early diagnosis while in others there is stigma lack of resources and limited access to education and healthcare.
-  This creates unequal opportunities and challenges for individuals with autism worldwide.
+  Autism is a global issue that affects millions of individuals and their families across different countries 
+  However awareness understanding and support systems vary significantly depending on cultural economic and educational factors 
+  In some regions there is strong support and early diagnosis while in others there is stigma lack of resources and limited access to education and healthcare 
+  This creates unequal opportunities and challenges for individuals with autism worldwide
   </p>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
@@ -186,17 +193,31 @@
 
 <!-- SOLUTIONS -->
 <div id="p4" class="page">
-  <h1 style="background:linear-gradient(135deg,#84fab0,#8fd3f4);padding:20px;border-radius:10px;">Solutions</h1>
-
+  <h1>Solutions</h1>
   <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178">
 
   <p>
-  Several solutions can improve autism awareness and inclusion on a global scale.
-  Education plays a key role in helping people understand autism and reduce misconceptions.
-  Governments and organizations can implement inclusive policies in schools and workplaces.
-  Early diagnosis and access to support services can greatly improve development and quality of life.
-  Awareness campaigns and community programs can also encourage acceptance and create a more inclusive society.
+  Several solutions can improve autism awareness and inclusion on a global scale 
+  Education plays a key role in helping people understand autism and reduce misconceptions 
+  Governments and organizations can implement inclusive policies in schools and workplaces 
+  Early diagnosis and access to support services can greatly improve development and quality of life 
+  Awareness campaigns and community programs can also encourage acceptance and create a more inclusive society
   </p>
+
+  <div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
+
+<!-- TEAM SECTION -->
+<div id="team" class="page">
+  <h1>People Who Worked On This Project</h1>
+
+  <div class="team-box">
+    <p><b>Mustafa</b></p>
+    <p><b>Ahram</b></p>
+    <p><b>Zayan</b></p>
+    <p><b>Hasan Ali</b></p>
+    <p><b>Ahmed Mustafa</b></p>
+  </div>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
