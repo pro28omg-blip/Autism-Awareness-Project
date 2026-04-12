@@ -15,13 +15,12 @@
       position: fixed;
       top: 10px;
       right: 10px;
-      background: linear-gradient(135deg, #ffb347, #ffcc33);
+      background: #ffcc33;
       color: black;
       padding: 10px 15px;
-      border-radius: 12px;
+      border-radius: 10px;
       font-weight: bold;
       z-index: 9999;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     /* COOKIE */
@@ -32,7 +31,7 @@
       z-index: 9999;
     }
 
-    /* NAVBAR */
+    /* NAV */
     .navbar {
       background: #4a90e2;
       padding: 15px;
@@ -43,9 +42,9 @@
 
     .navbar a {
       color: white;
-      margin: 0 15px;
       font-weight: bold;
       cursor: pointer;
+      margin: 0 15px;
     }
 
     .hero {
@@ -61,38 +60,35 @@
       padding: 20px;
     }
 
-    /* CARDS */
+    /* ONLY TITLE INSIDE CARDS */
     .card {
-      padding: 25px;
+      padding: 30px;
       margin: 25px 0;
       border-radius: 15px;
       cursor: pointer;
-      transition: 0.3s;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
       color: white;
-      line-height: 1.6;
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-6px);
     }
 
-    /* GRADIENTS */
     #awareness { background: linear-gradient(135deg, #ff6a00, #ee0979); }
     #about { background: linear-gradient(135deg, #4facfe, #00f2fe); }
     #issue { background: linear-gradient(135deg, #ffd89b, #19547b); }
     #solutions { background: linear-gradient(135deg, #00c9ff, #92fe9d); }
 
-    .card h2 {
-      margin-bottom: 10px;
+    /* PAGES (ALL TEXT INSIDE HERE ONLY) */
+    .page {
+      display: none;
+      padding: 40px;
+      text-align: center;
+      line-height: 1.7;
     }
-
-    .card p {
-      font-size: 13px;
-      opacity: 0.95;
-      margin-bottom: 10px;
-    }
-
-    .page { display: none; padding: 40px; text-align: center; }
 
     img {
       width: 100%;
@@ -108,176 +104,114 @@
       color: white;
       border-radius: 8px;
       cursor: pointer;
+      display: inline-block;
     }
-
-    /* TEAM */
-    .team-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .team-box {
-      padding: 15px 20px;
-      border-radius: 12px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .t1 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
-    .t2 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
-    .t3 { background: linear-gradient(135deg, #f6d365, #fda085); }
-    .t4 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
-    .t5 { background: linear-gradient(135deg, #ff6a00, #ee0979); }
 
   </style>
 </head>
 
 <body>
 
+<!-- COOKIE COUNTER -->
 <div id="scoreBoard">🍪 Cookies: <span id="score">0</span></div>
 
 <div class="navbar">
   <a onclick="showPage('home')">Home</a>
-  <a onclick="showPage('team')">Team</a>
 </div>
 
-<!-- HOME -->
+<!-- HOME (ONLY TITLES INSIDE BOXES) -->
 <div id="home">
-
   <div class="hero">
     <h1>Autism Awareness Project</h1>
-    <p>Understanding inclusion and global awareness</p>
   </div>
 
   <div class="container">
 
-    <!-- 🧠 AWARENESS -->
     <div class="card" id="awareness" onclick="showPage('p1')">
-      <h2>Awareness</h2>
-      <p>
-        Autism awareness is essential for building an inclusive society that understands neurodiversity.
-        Autism is not a disease but a spectrum condition that affects communication, behavior, and sensory processing.
-        Many individuals experience the world differently, requiring patience, understanding, and support.
-      </p>
-      <p>
-        Awareness reduces stigma and helps schools, workplaces, and communities become more inclusive.
-        A well-known example is Temple Grandin, an autistic scientist who revolutionized livestock handling systems,
-        showing how neurodiverse individuals can contribute significantly to society.
-      </p>
-      <p>
-        Global awareness campaigns like World Autism Awareness Day (April 2nd) help educate millions of people
-        and encourage acceptance worldwide.
-      </p>
+      Awareness
     </div>
 
-    <!-- 📘 ABOUT -->
     <div class="card" id="about" onclick="showPage('p2')">
-      <h2>About</h2>
-      <p>
-        This Global Perspectives project explores autism from social, educational, and cultural viewpoints.
-        It examines how different countries define and support autism differently.
-      </p>
-      <p>
-        In developed countries, early diagnosis and structured support systems are more common,
-        while in developing regions awareness is still limited.
-      </p>
-      <p>
-        The project focuses on how education systems can adapt to support neurodiverse learners
-        through inclusion, training, and policy improvements.
-      </p>
+      About
     </div>
 
-    <!-- 🌍 GLOBAL ISSUE -->
     <div class="card" id="issue" onclick="showPage('p3')">
-      <h2>Global Issue</h2>
-      <p>
-        Autism is a global issue because access to diagnosis and support is unequal worldwide.
-      </p>
-      <p>
-        In some countries, children receive early intervention therapy, improving communication and learning outcomes.
-        However, in other regions, lack of awareness leads to late diagnosis or misunderstanding of autism behaviors.
-      </p>
-      <p>
-        UNESCO reports highlight that many children with autism are excluded from mainstream education,
-        limiting their opportunities and development.
-      </p>
+      Global Issue
     </div>
 
-    <!-- 💡 SOLUTIONS -->
     <div class="card" id="solutions" onclick="showPage('p4')">
-      <h2>Solutions</h2>
-      <p>
-        Solutions begin with education and awareness at a global level.
-        Teaching students and teachers about autism helps reduce stigma and misunderstanding.
-      </p>
-      <p>
-        Schools can adopt inclusive learning systems where neurodiverse students receive tailored support.
-        Governments can invest in early diagnosis programs and therapy services.
-      </p>
-      <p>
-        Public awareness campaigns, such as autism acceptance movements, promote equality and inclusion
-        across communities worldwide.
-      </p>
+      Solutions
     </div>
 
   </div>
 </div>
 
-<!-- PAGES -->
-<div id="p1" class="page"><h1>Awareness</h1><img src="https://images.unsplash.com/photo-1588072432836-e10032774350"><div class="back-btn" onclick="showPage('home')">Back</div></div>
-<div id="p2" class="page"><h1>About</h1><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754"><div class="back-btn" onclick="showPage('home')">Back</div></div>
-<div id="p3" class="page"><h1>Global Issue</h1><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5"><div class="back-btn" onclick="showPage('home')">Back</div></div>
-<div id="p4" class="page"><h1>Solutions</h1><img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178"><div class="back-btn" onclick="showPage('home')">Back</div></div>
+<!-- FULL CONTENT ONLY INSIDE PAGES -->
+<div id="p1" class="page">
+  <h1>Awareness</h1>
+  Autism awareness helps society understand neurodiversity and reduce stigma.<br><br>
+  Autism is a spectrum condition affecting communication, behavior, and sensory processing.<br><br>
+  It promotes inclusion in schools and communities.<br><br>
+  <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+  <div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
 
-<!-- TEAM -->
-<div id="team" class="page">
-  <h1>People Who Worked On This Project</h1>
+<div id="p2" class="page">
+  <h1>About</h1>
+  This project explores autism globally from an educational and social perspective.<br><br>
+  It compares awareness levels across different countries.<br><br>
+  Focus is on inclusion, education systems, and support.<br><br>
+  <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
+  <div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
 
-  <div class="team-container">
-    <div class="team-box t1">Mustafa</div>
-    <div class="team-box t2">Ahram</div>
-    <div class="team-box t3">Zayan</div>
-    <div class="team-box t4">Hasan Ali</div>
-    <div class="team-box t5">Ahmed Mustafa</div>
-  </div>
+<div id="p3" class="page">
+  <h1>Global Issue</h1>
+  Autism support is unequal worldwide.<br><br>
+  Some countries offer early diagnosis while others lack awareness.<br><br>
+  This creates inequality in education and opportunities.<br><br>
+  <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5">
+  <div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
 
+<div id="p4" class="page">
+  <h1>Solutions</h1>
+  Education and awareness improve inclusion.<br><br>
+  Early diagnosis and therapy support development.<br><br>
+  Schools must adopt inclusive systems.<br><br>
+  <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178">
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
 <script>
 let score = 0;
 
-function showPage(pageId) {
-  document.querySelectorAll('.page, #home').forEach(p => p.style.display = 'none');
-  document.getElementById(pageId).style.display = 'block';
+function showPage(id){
+  document.querySelectorAll('.page, #home').forEach(e=>e.style.display='none');
+  document.getElementById(id).style.display='block';
 }
 
 /* COOKIE SYSTEM */
-function spawnCookie() {
-  const cookie = document.createElement("div");
-  cookie.className = "cookie";
-  cookie.innerHTML = "🍪";
+function spawnCookie(){
+  const c=document.createElement("div");
+  c.className="cookie";
+  c.innerHTML="🍪";
 
-  cookie.style.top = Math.random() * 80 + "%";
-  cookie.style.left = Math.random() * 80 + "%";
+  c.style.top=Math.random()*80+"%";
+  c.style.left=Math.random()*80+"%";
 
-  cookie.onclick = function() {
+  c.onclick=function(){
     score++;
-    document.getElementById("score").innerText = score;
-    cookie.remove();
-  };
+    document.getElementById("score").innerText=score;
+    c.remove();
+  }
 
-  document.body.appendChild(cookie);
-  setTimeout(() => cookie.remove(), 5000);
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),5000);
 }
 
-/* ⏱ FIXED: EVERY 25 SECONDS */
-setInterval(() => {
-  spawnCookie();
-}, 25000);
-
+/* EVERY 25 SECONDS */
+setInterval(spawnCookie,25000);
 </script>
 
 </body>
