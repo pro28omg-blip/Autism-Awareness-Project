@@ -6,48 +6,76 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: #f4f7ff;
     }
 
+    /* NAVBAR */
     .navbar {
       background: #4a90e2;
       padding: 15px;
       text-align: center;
+      position: sticky;
+      top: 0;
     }
 
     .navbar a {
       color: white;
       margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
       cursor: pointer;
     }
 
+    .navbar a:hover {
+      background: white;
+      color: #4a90e2;
+      transform: translateY(-3px) scale(1.1);
+    }
+
+    .navbar a:active {
+      transform: scale(0.95);
+    }
+
+    /* HERO */
     .hero {
       background: linear-gradient(90deg, #4a90e2, #7b5cff);
       color: white;
       text-align: center;
-      padding: 60px;
+      padding: 60px 20px;
     }
 
+    /* CONTAINER */
     .container {
       width: 85%;
       margin: auto;
       padding: 20px;
     }
 
+    /* CARDS */
     .card {
       padding: 25px;
       margin: 25px 0;
       border-radius: 15px;
       text-align: center;
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* GRADIENT COLORS (RESTORED) */
     #awareness { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
     #about { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
     #issue { background: linear-gradient(135deg, #fddb92, #d1fdff); }
     #solutions { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
 
+    /* PAGES */
     .page {
       display: none;
       padding: 40px;
@@ -58,8 +86,10 @@
 
     img {
       width: 100%;
-      max-width: 400px;
+      max-width: 650px;
+      border-radius: 15px;
       margin-top: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     p {
@@ -68,14 +98,19 @@
     }
 
     .back-btn {
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 10px 20px;
       background: #4a90e2;
       color: white;
-      display: inline-block;
       border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s;
     }
+
+    .back-btn:hover {
+      transform: scale(1.1);
+    }
+
   </style>
 </head>
 
@@ -102,44 +137,64 @@
 
 <!-- AWARENESS -->
 <div id="p1" class="page">
-  <h1 style="background:#a1c4fd;padding:20px;">Awareness</h1>
+  <h1 style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb);padding:20px;border-radius:10px;">Awareness</h1>
 
-  <img src="https://cdn-icons-png.flaticon.com/512/3468/3468379.png">
+  <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
 
-  <p>Autism awareness is essential in promoting understanding acceptance and inclusion in society...</p>
+  <p>
+  Autism awareness is essential in promoting understanding acceptance and inclusion in society 
+  It helps people recognize that autism is a spectrum meaning individuals experience it differently 
+  Increased awareness reduces stereotypes and discrimination while encouraging supportive environments 
+  for individuals with autism in schools workplaces and communities
+  </p>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
 <!-- ABOUT -->
 <div id="p2" class="page">
-  <h1 style="background:#fbc2eb;padding:20px;">About</h1>
+  <h1 style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee);padding:20px;border-radius:10px;">About</h1>
 
-  <img src="https://cdn-icons-png.flaticon.com/512/2913/2913465.png">
+  <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
 
-  <p>This Global Perspectives project explores autism awareness by analyzing different viewpoints...</p>
+  <p>
+  This Global Perspectives project explores autism awareness by analyzing different viewpoints from around the world 
+  It focuses on how societies understand autism the challenges individuals face and the importance of inclusive practices 
+  The project also evaluates solutions that can improve awareness and quality of life for individuals on the autism spectrum
+  </p>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
 <!-- ISSUE -->
 <div id="p3" class="page">
-  <h1 style="background:#fddb92;padding:20px;">Global Issue</h1>
+  <h1 style="background:linear-gradient(135deg,#fddb92,#d1fdff);padding:20px;border-radius:10px;">Global Issue</h1>
 
-  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+  <img src="https://images.unsplash.com/photo-1584697964403-8c7f1fefbb1a">
 
-  <p>Autism is a global issue that affects millions of individuals and their families...</p>
+  <p>
+  Autism is a global issue that affects millions of individuals and their families across different countries 
+  However awareness understanding and support systems vary significantly depending on cultural economic and educational factors 
+  In some regions there is strong support and early diagnosis while in others there is stigma lack of resources and limited access to education and healthcare 
+  This creates unequal opportunities and challenges for individuals with autism worldwide
+  </p>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
 <!-- SOLUTIONS -->
 <div id="p4" class="page">
-  <h1 style="background:#84fab0;padding:20px;">Solutions</h1>
+  <h1 style="background:linear-gradient(135deg,#84fab0,#8fd3f4);padding:20px;border-radius:10px;">Solutions</h1>
 
-  <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
+  <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178">
 
-  <p>Several solutions can improve autism awareness and inclusion on a global scale...</p>
+  <p>
+  Several solutions can improve autism awareness and inclusion on a global scale 
+  Education plays a key role in helping people understand autism and reduce misconceptions 
+  Governments and organizations can implement inclusive policies in schools and workplaces 
+  Early diagnosis and access to support services can greatly improve development and quality of life 
+  Awareness campaigns and community programs can also encourage acceptance and create a more inclusive society
+  </p>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
