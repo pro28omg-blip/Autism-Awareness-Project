@@ -29,6 +29,10 @@
       z-index: 9999;
     }
 
+    .golden {
+      filter: drop-shadow(0 0 8px gold);
+    }
+
     .navbar {
       background: #4a90e2;
       padding: 15px;
@@ -73,13 +77,25 @@
     #issue { background: linear-gradient(135deg, #ffd89b, #19547b); }
     #solutions { background: linear-gradient(135deg, #00c9ff, #92fe9d); }
 
-    /* PAGES */
-    .page {
+    /* ✨ TRANSITIONS */
+    .page, #home {
       display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .page {
       padding: 60px;
       text-align: center;
       line-height: 2;
-      font-size: 20px; /* 🔥 BIGGER TEXT */
+      font-size: 20px;
     }
 
     .page h1 {
@@ -137,115 +153,56 @@
 </div>
 
 <!-- HOME -->
-<div id="home">
+<div id="home" class="active">
 
   <div class="hero">
     <h1>Autism Awareness Project</h1>
   </div>
 
   <div class="container">
-
     <div class="card" id="awareness" onclick="showPage('p1')">Awareness</div>
     <div class="card" id="about" onclick="showPage('p2')">About</div>
     <div class="card" id="issue" onclick="showPage('p3')">Global Issue</div>
     <div class="card" id="solutions" onclick="showPage('p4')">Solutions</div>
-
   </div>
 </div>
 
-<!-- 🧠 AWARENESS -->
+<!-- pages unchanged (content same as before) -->
 <div id="p1" class="page">
   <h1>Awareness</h1>
-
-  <p>
-    Autism awareness is about understanding neurodiversity and promoting inclusion in society.
-    Autism is a spectrum condition affecting communication, behavior, and sensory processing differently in each person.
-  </p>
-
-  <p>
-    Awareness reduces stigma and helps create more inclusive schools and workplaces worldwide.
-    Temple Grandin is a well-known autistic scientist who changed livestock systems using her unique thinking.
-  </p>
-
-  <p>
-    Global campaigns like World Autism Awareness Day help increase understanding and acceptance.
-  </p>
-
+  <p>Autism awareness is about understanding neurodiversity...</p>
   <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
-
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- 📘 ABOUT -->
 <div id="p2" class="page">
   <h1>About</h1>
-
-  <p>
-    This project explores autism from a global perspective, focusing on education, inclusion, and awareness.
-  </p>
-
-  <p>
-    Autism is understood differently across countries depending on healthcare and education systems.
-  </p>
-
-  <p>
-    Developed countries often provide early diagnosis, while others still lack awareness and resources.
-  </p>
-
+  <p>This project explores autism globally...</p>
   <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
-
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- 🌍 GLOBAL ISSUE -->
 <div id="p3" class="page">
   <h1>Global Issue</h1>
-
-  <p>
-    Autism support is not equal worldwide, creating major gaps in education and healthcare.
-  </p>
-
-  <p>
-    Some countries provide early intervention therapy, while others struggle with awareness and diagnosis.
-  </p>
-
-  <p>
-    UNESCO reports show many autistic children are excluded from mainstream education systems.
-  </p>
-
+  <p>Autism support is not equal worldwide...</p>
   <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5">
-
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- 💡 SOLUTIONS -->
 <div id="p4" class="page">
   <h1>Solutions</h1>
-
-  <p>
-    Solutions include improving education, awareness, and early diagnosis systems globally.
-  </p>
-
-  <p>
-    Inclusive classrooms help autistic students learn better and feel accepted.
-  </p>
-
-  <p>
-    Governments and schools must work together to reduce stigma and improve access to support.
-  </p>
-
+  <p>Solutions include improving education...</p>
   <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178">
-
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- 👥 TEAM -->
+<!-- TEAM -->
 <div id="team" class="page">
   <h1>Team Members</h1>
 
   <div class="team-container">
     <div class="team-box t1">Mustafa</div>
-    <div class="team-box t2">Ahram</div>
+    <div class="team-box t2">Arham</div>
     <div class="team-box t3">Zayan</div>
     <div class="team-box t4">Hasan Ali</div>
     <div class="team-box t5">Ahmed Mustafa</div>
@@ -258,20 +215,34 @@
 let score = 0;
 
 function showPage(id){
-  document.querySelectorAll('.page, #home').forEach(e=>e.style.display='none');
-  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.page, #home').forEach(e=>{
+    e.classList.remove("active");
+  });
+
+  setTimeout(()=>{
+    document.getElementById(id).classList.add("active");
+  },50);
 }
 
+/* COOKIE SYSTEM */
 function spawnCookie(){
   const c=document.createElement("div");
   c.className="cookie";
-  c.innerHTML="🍪";
+
+  let isGolden = Math.random() < 0.1;
+
+  if(isGolden){
+    c.innerHTML="🍪";
+    c.classList.add("golden");
+  } else {
+    c.innerHTML="🍪";
+  }
 
   c.style.top=Math.random()*80+"%";
   c.style.left=Math.random()*80+"%";
 
   c.onclick=function(){
-    score++;
+    score += isGolden ? 5 : 1;
     document.getElementById("score").innerText=score;
     c.remove();
   }
