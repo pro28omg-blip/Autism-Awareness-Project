@@ -48,14 +48,12 @@
       padding: 60px 20px;
     }
 
-    /* CONTAINER */
     .container {
       width: 85%;
       margin: auto;
       padding: 20px;
     }
 
-    /* CARDS */
     .card {
       padding: 25px;
       margin: 25px 0;
@@ -69,20 +67,32 @@
       transform: translateY(-6px);
     }
 
-    /* GRADIENT COLORS (RESTORED) */
-    #awareness { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
-    #about { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
-    #issue { background: linear-gradient(135deg, #fddb92, #d1fdff); }
-    #solutions { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+    /* FIXED CLEAN GRADIENTS (CONSISTENT NOW) */
+    #awareness {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    }
 
-    /* PAGES */
+    #about {
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
+
+    #issue {
+      background: linear-gradient(135deg, #ffd89b, #19547b);
+    }
+
+    #solutions {
+      background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    }
+
     .page {
       display: none;
       padding: 40px;
       text-align: center;
     }
 
-    .active { display: block; }
+    .active {
+      display: block;
+    }
 
     img {
       width: 100%;
@@ -104,11 +114,6 @@
       color: white;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .back-btn:hover {
-      transform: scale(1.1);
     }
 
   </style>
@@ -166,11 +171,11 @@
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
 
-<!-- ISSUE -->
+<!-- ISSUE (FIXED IMAGE + SAFE SOURCE) -->
 <div id="p3" class="page">
-  <h1 style="background:linear-gradient(135deg,#fddb92,#d1fdff);padding:20px;border-radius:10px;">Global Issue</h1>
+  <h1 style="background:linear-gradient(135deg,#ffd89b,#19547b);padding:20px;border-radius:10px;">Global Issue</h1>
 
-  <img src="https://images.unsplash.com/photo-1584697964403-8c7f1fefbb1a">
+  <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5">
 
   <p>
   Autism is a global issue that affects millions of individuals and their families across different countries 
