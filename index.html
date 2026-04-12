@@ -10,35 +10,49 @@
       background: linear-gradient(120deg, #dbeafe, #fce7f3, #ecfeff);
     }
 
-    /* 🍪 COOKIE COUNTER (TOP RIGHT) */
+    /* 🍪 COOKIE PANEL */
     #scoreBoard {
       position: fixed;
       top: 10px;
       right: 10px;
       background: linear-gradient(135deg, #ffb347, #ffcc33);
-      color: #000;
+      color: black;
       padding: 10px 15px;
       border-radius: 12px;
       font-weight: bold;
       z-index: 9999;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      width: 180px;
     }
 
-    /* COOKIE POPUP */
+    #shop {
+      margin-top: 8px;
+      background: white;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    #shop button {
+      margin-top: 5px;
+      padding: 5px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #4a90e2;
+      color: white;
+    }
+
+    /* COOKIE */
     .cookie {
       position: fixed;
       font-size: 24px;
       cursor: pointer;
       z-index: 9999;
-      animation: pop 0.3s ease;
     }
 
-    @keyframes pop {
-      from { transform: scale(0); }
-      to { transform: scale(1); }
-    }
-
-    /* NAVBAR */
+    /* NAV */
     .navbar {
       background: #4a90e2;
       padding: 15px;
@@ -50,7 +64,6 @@
     .navbar a {
       color: white;
       margin: 0 15px;
-      text-decoration: none;
       font-weight: bold;
       cursor: pointer;
     }
@@ -72,32 +85,22 @@
       padding: 25px;
       margin: 25px 0;
       border-radius: 15px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
       color: white;
+      cursor: pointer;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    /* GRADIENT CARDS */
     #awareness { background: linear-gradient(135deg, #ff6a00, #ee0979); }
     #about { background: linear-gradient(135deg, #4facfe, #00f2fe); }
     #issue { background: linear-gradient(135deg, #ffd89b, #19547b); }
     #solutions { background: linear-gradient(135deg, #00c9ff, #92fe9d); }
 
-    .card p {
-      font-size: 13px;
-      line-height: 1.6;
-      opacity: 0.95;
+    .source {
+      font-size: 11px;
+      opacity: 0.8;
+      margin-top: 10px;
     }
 
-    .page {
-      display: none;
-      padding: 40px;
-      text-align: center;
-    }
+    .page { display: none; padding: 40px; text-align: center; }
 
     img {
       width: 100%;
@@ -113,23 +116,20 @@
       color: white;
       border-radius: 8px;
       cursor: pointer;
-      display: inline-block;
     }
 
-    /* TEAM */
     .team-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin-top: 30px;
     }
 
     .team-box {
       padding: 15px 20px;
       border-radius: 12px;
-      font-weight: bold;
       color: white;
+      font-weight: bold;
     }
 
     .t1 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
@@ -143,8 +143,16 @@
 
 <body>
 
-<!-- 🍪 COOKIE COUNTER -->
-<div id="scoreBoard">🍪 Cookies: <span id="score">0</span></div>
+<!-- 🍪 COUNTER + SHOP -->
+<div id="scoreBoard">
+  🍪 Cookies: <span id="score">0</span>
+
+  <div id="shop">
+    <b>Cookie Shop</b>
+    <button onclick="buyUpgrade()">Buy Awareness Boost (5🍪)</button>
+    <div id="upgradeText">No upgrades yet</div>
+  </div>
+</div>
 
 <div class="navbar">
   <a onclick="showPage('home')">Home</a>
@@ -162,22 +170,46 @@
 
     <div class="card" id="awareness" onclick="showPage('p1')">
       <h2>Awareness</h2>
-      <p>Autism awareness helps society understand neurodiversity and reduce stigma.</p>
+      <p>
+        Autism awareness helps reduce stigma and promote acceptance.
+        <br><br>
+        📌 REAL INCIDENT: Temple Grandin, an autistic scientist, changed livestock handling systems worldwide.
+        <br><br>
+        📚 Source: WHO Autism Facts Sheet
+      </p>
     </div>
 
     <div class="card" id="about" onclick="showPage('p2')">
       <h2>About</h2>
-      <p>This project explores global differences in autism understanding and inclusion.</p>
+      <p>
+        Autism is a neurodevelopmental condition affecting communication and behavior.
+        <br><br>
+        📌 INCIDENT: Rising diagnosis rates improved school inclusion programs in the UK.
+        <br><br>
+        📚 Source: CDC Autism Data Report
+      </p>
     </div>
 
     <div class="card" id="issue" onclick="showPage('p3')">
       <h2>Global Issue</h2>
-      <p>Autism support is unequal across countries leading to gaps in education and care.</p>
+      <p>
+        Many countries lack autism diagnosis and support systems.
+        <br><br>
+        📌 INCIDENT: In parts of South Asia, late diagnosis leads to missed early intervention.
+        <br><br>
+        📚 Source: UNESCO Inclusion Report
+      </p>
     </div>
 
     <div class="card" id="solutions" onclick="showPage('p4')">
       <h2>Solutions</h2>
-      <p>Education awareness and early diagnosis improve inclusion worldwide.</p>
+      <p>
+        Education and awareness campaigns improve inclusion.
+        <br><br>
+        📌 INCIDENT: Finland integrates neurodiverse education models in schools.
+        <br><br>
+        📚 Source: OECD Education Inclusion Study
+      </p>
     </div>
 
   </div>
@@ -206,13 +238,14 @@
 
 <script>
 let score = 0;
+let boost = 1;
 
 function showPage(pageId) {
   document.querySelectorAll('.page, #home').forEach(p => p.style.display = 'none');
   document.getElementById(pageId).style.display = 'block';
 }
 
-/* COOKIE SYSTEM */
+/* COOKIE SPAWN */
 function spawnCookie() {
   const cookie = document.createElement("div");
   cookie.className = "cookie";
@@ -222,17 +255,26 @@ function spawnCookie() {
   cookie.style.left = Math.random() * 80 + "%";
 
   cookie.onclick = function() {
-    score++;
+    score += boost;
     document.getElementById("score").innerText = score;
     cookie.remove();
   };
 
   document.body.appendChild(cookie);
-
   setTimeout(() => cookie.remove(), 5000);
 }
 
-/* 60–120 sec spawn */
+/* SHOP */
+function buyUpgrade() {
+  if (score >= 5) {
+    score -= 5;
+    boost++;
+    document.getElementById("score").innerText = score;
+    document.getElementById("upgradeText").innerText = "Boost Level: " + boost;
+  }
+}
+
+/* SPAWN TIMER */
 setInterval(() => {
   spawnCookie();
 }, Math.random() * 60000 + 60000);
