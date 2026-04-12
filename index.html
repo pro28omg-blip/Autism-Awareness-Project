@@ -10,6 +10,35 @@
       background: linear-gradient(120deg, #dbeafe, #fce7f3, #ecfeff);
     }
 
+    /* 🍪 COOKIE COUNTER (TOP RIGHT) */
+    #scoreBoard {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, #ffb347, #ffcc33);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 12px;
+      font-weight: bold;
+      z-index: 9999;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* COOKIE POPUP */
+    .cookie {
+      position: fixed;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 9999;
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
+    /* NAVBAR */
     .navbar {
       background: #4a90e2;
       padding: 15px;
@@ -52,24 +81,18 @@
       transform: translateY(-6px);
     }
 
-    /* GRADIENTS */
+    /* GRADIENT CARDS */
     #awareness { background: linear-gradient(135deg, #ff6a00, #ee0979); }
     #about { background: linear-gradient(135deg, #4facfe, #00f2fe); }
     #issue { background: linear-gradient(135deg, #ffd89b, #19547b); }
     #solutions { background: linear-gradient(135deg, #00c9ff, #92fe9d); }
 
-    /* 🧠 INSIDE ARTICLE TEXT STYLE */
-    .article {
-      margin-top: 10px;
-      font-size: 14px;
-      line-height: 1.7;
+    .card p {
+      font-size: 13px;
+      line-height: 1.6;
       opacity: 0.95;
-      background: rgba(255,255,255,0.15);
-      padding: 12px;
-      border-radius: 10px;
     }
 
-    /* PAGES */
     .page {
       display: none;
       padding: 40px;
@@ -81,7 +104,6 @@
       max-width: 650px;
       border-radius: 15px;
       margin-top: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .back-btn {
@@ -91,6 +113,7 @@
       color: white;
       border-radius: 8px;
       cursor: pointer;
+      display: inline-block;
     }
 
     /* TEAM */
@@ -120,6 +143,9 @@
 
 <body>
 
+<!-- 🍪 COOKIE COUNTER -->
+<div id="scoreBoard">🍪 Cookies: <span id="score">0</span></div>
+
 <div class="navbar">
   <a onclick="showPage('home')">Home</a>
   <a onclick="showPage('team')">Team</a>
@@ -136,59 +162,31 @@
 
     <div class="card" id="awareness" onclick="showPage('p1')">
       <h2>Awareness</h2>
-      <p>Understanding autism helps promote acceptance inclusion and awareness in society.</p>
-
-      <!-- 🧠 ARTICLE INSIDE BOX -->
-      <div class="article">
-        Autism awareness is important because it helps society understand that autism is not a disease but a spectrum condition.
-        Many individuals with autism experience the world differently, especially in communication, social interaction, and sensory processing.
-        Increasing awareness reduces stigma and helps create more supportive environments in schools and communities.
-      </div>
+      <p>Autism awareness helps society understand neurodiversity and reduce stigma.</p>
     </div>
 
     <div class="card" id="about" onclick="showPage('p2')">
       <h2>About</h2>
-      <p>This project explores autism awareness globally focusing on challenges and inclusion.</p>
-
-      <div class="article">
-        This project is part of Global Perspectives and investigates how autism is understood in different societies.
-        It focuses on comparing awareness levels, support systems, and challenges faced by individuals and families.
-        The goal is to highlight the importance of inclusion and equal opportunities worldwide.
-      </div>
+      <p>This project explores global differences in autism understanding and inclusion.</p>
     </div>
 
     <div class="card" id="issue" onclick="showPage('p3')">
       <h2>Global Issue</h2>
-      <p>Autism awareness varies worldwide leading to unequal support systems.</p>
-
-      <div class="article">
-        Autism is a global issue because support systems are not equal across countries.
-        Some nations provide early diagnosis and education support, while others lack resources and awareness.
-        This creates inequality in opportunities, education, and healthcare access for individuals with autism.
-      </div>
+      <p>Autism support is unequal across countries leading to gaps in education and care.</p>
     </div>
 
     <div class="card" id="solutions" onclick="showPage('p4')">
       <h2>Solutions</h2>
-      <p>Education and inclusion can improve understanding of autism globally.</p>
-
-      <div class="article">
-        Solutions include improving education about autism in schools and communities,
-        training teachers to support neurodiverse students, and increasing public awareness campaigns.
-        Early diagnosis and access to therapy also help improve long-term development and inclusion.
-      </div>
+      <p>Education awareness and early diagnosis improve inclusion worldwide.</p>
     </div>
 
   </div>
 </div>
 
-<!-- PAGES (UNCHANGED) -->
+<!-- PAGES -->
 <div id="p1" class="page"><h1>Awareness</h1><img src="https://images.unsplash.com/photo-1588072432836-e10032774350"><div class="back-btn" onclick="showPage('home')">Back</div></div>
-
 <div id="p2" class="page"><h1>About</h1><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754"><div class="back-btn" onclick="showPage('home')">Back</div></div>
-
 <div id="p3" class="page"><h1>Global Issue</h1><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5"><div class="back-btn" onclick="showPage('home')">Back</div></div>
-
 <div id="p4" class="page"><h1>Solutions</h1><img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178"><div class="back-btn" onclick="showPage('home')">Back</div></div>
 
 <!-- TEAM -->
@@ -207,10 +205,38 @@
 </div>
 
 <script>
+let score = 0;
+
 function showPage(pageId) {
   document.querySelectorAll('.page, #home').forEach(p => p.style.display = 'none');
   document.getElementById(pageId).style.display = 'block';
 }
+
+/* COOKIE SYSTEM */
+function spawnCookie() {
+  const cookie = document.createElement("div");
+  cookie.className = "cookie";
+  cookie.innerHTML = "🍪";
+
+  cookie.style.top = Math.random() * 80 + "%";
+  cookie.style.left = Math.random() * 80 + "%";
+
+  cookie.onclick = function() {
+    score++;
+    document.getElementById("score").innerText = score;
+    cookie.remove();
+  };
+
+  document.body.appendChild(cookie);
+
+  setTimeout(() => cookie.remove(), 5000);
+}
+
+/* 60–120 sec spawn */
+setInterval(() => {
+  spawnCookie();
+}, Math.random() * 60000 + 60000);
+
 </script>
 
 </body>
