@@ -29,7 +29,7 @@
       100% { transform: translate(-200px,-200px); }
     }
 
-    /* NAVBAR */
+    /* NAVBAR (UNCHANGED) */
     .navbar {
       background: #4a90e2;
       padding: 15px;
@@ -76,6 +76,7 @@
     .hero p {
       font-size: 18px;
       opacity: 0.9;
+      line-height: 1.8; /* spacing added */
     }
 
     /* CONTAINER */
@@ -87,21 +88,43 @@
 
     /* CARDS */
     .card {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
+      padding: 25px;
+      margin: 25px 0;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      border-left: 6px solid #4a90e2;
+      border-left: 8px solid #4a90e2;
       transition: transform 0.3s ease;
+      line-height: 1.8; /* text spacing */
     }
 
     .card:hover {
       transform: translateY(-6px);
     }
 
+    /* 🎨 VIBRANT COLORS FOR EACH BOX */
+    #awareness {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    }
+
+    #about {
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
+
+    #issue {
+      background: linear-gradient(135deg, #fddb92, #d1fdff);
+    }
+
+    #solutions {
+      background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    }
+
     h2 {
-      color: #4a90e2;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-top: 10px;
     }
 
     footer {
@@ -116,7 +139,6 @@
 
 <body>
 
-<!-- NAVBAR (FIXED LINKS) -->
 <div class="navbar">
   <a href="#home">Home</a>
   <a href="#awareness">Awareness</a>
@@ -125,7 +147,6 @@
   <a href="#solutions">Solutions</a>
 </div>
 
-<!-- HERO -->
 <div class="hero" id="home">
   <h1>Autism Awareness Project</h1>
   <p>Understanding inclusion and global awareness</p>
