@@ -70,6 +70,21 @@
   .section-title{font-size:clamp(30px,4.5vw,48px);font-weight:700;color:var(--slate-900);margin-bottom:14px}
   .section-sub{color:var(--slate-600);font-size:17px;max-width:680px;margin-bottom:50px}
 
+  .aims{background:linear-gradient(180deg,#fdfcff,#f5f3ff)}
+  .aims-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:10px}
+  .aims-col{background:#fff;border-radius:24px;padding:38px 34px;border:1px solid var(--slate-200);box-shadow:0 10px 30px rgba(15,23,42,.06);position:relative;overflow:hidden}
+  .aims-col::before{content:"";position:absolute;left:0;top:0;width:100%;height:5px}
+  .aims-col.aim::before{background:linear-gradient(90deg,#4f46e5,#8b5cf6)}
+  .aims-col.obj::before{background:linear-gradient(90deg,#06b6d4,#3b82f6)}
+  .aims-col h3{font-size:24px;font-weight:700;color:var(--slate-900);margin-bottom:8px;font-family:'Playfair Display',serif}
+  .aims-col .lead{color:var(--slate-600);font-size:15px;margin-bottom:20px}
+  .aims-col ol{list-style:none;counter-reset:item;padding:0}
+  .aims-col ol li{counter-increment:item;position:relative;padding:14px 0 14px 50px;color:var(--slate-700);font-size:15px;border-bottom:1px solid var(--slate-100)}
+  .aims-col ol li:last-child{border-bottom:0}
+  .aims-col ol li::before{content:counter(item,decimal-leading-zero);position:absolute;left:0;top:14px;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:14px;color:#fff}
+  .aims-col.aim ol li::before{background:linear-gradient(135deg,#4f46e5,#8b5cf6)}
+  .aims-col.obj ol li::before{background:linear-gradient(135deg,#06b6d4,#3b82f6)}
+
   .topics{background:#fff}
   .topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
   .topic{position:relative;padding:36px 28px;border-radius:24px;color:#fff;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;cursor:pointer;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 30px rgba(15,23,42,.10);}
@@ -173,6 +188,7 @@
     .content-grid.flip .content-text{order:1}
     .content-grid.flip .content-visual{order:2}
     section{padding:70px 20px}
+    .aims-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -186,6 +202,7 @@
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#topics">Explore</a>
+      <a href="#aims">Aims</a>
       <a href="#about">About</a>
       <a href="#facts">Facts</a>
       <a href="#solutions">Solutions</a>
@@ -218,6 +235,40 @@
     </div>
   </div>
 </header>
+
+<section class="aims" id="aims">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Aims & Objectives</div>
+      <h2 class="section-title">What this project sets out to do.</h2>
+      <p class="section-sub">Our goal is to inform, inspire, and create change. Here's exactly what we're aiming for and the steps we're taking to get there.</p>
+    </div>
+    <div class="aims-grid">
+      <div class="aims-col aim reveal">
+        <h3>Our Aims</h3>
+        <p class="lead">The big-picture goals guiding our project.</p>
+        <ol>
+          <li>Raise awareness about autism and what it really means to be on the spectrum.</li>
+          <li>Promote acceptance, inclusion, and respect for neurodiversity in our community.</li>
+          <li>Challenge stereotypes and replace misinformation with facts.</li>
+          <li>Encourage students, families, and schools to support autistic individuals.</li>
+          <li>Show that autism is a global issue that calls for global action.</li>
+        </ol>
+      </div>
+      <div class="aims-col obj reveal">
+        <h3>Our Objectives</h3>
+        <p class="lead">The concrete steps we're taking to achieve those aims.</p>
+        <ol>
+          <li>Research autism using reliable sources such as the WHO and Autism Speaks.</li>
+          <li>Create clear, engaging content explaining the spectrum and its diversity.</li>
+          <li>Produce short videos that share real stories and key information.</li>
+          <li>Compare global perspectives on autism awareness and support systems.</li>
+          <li>Present practical solutions schools, families, and governments can apply.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="topics" id="topics">
   <div class="container">
@@ -371,7 +422,13 @@
         <video controls preload="metadata" playsinline>
           <source src="video4.mp4" type="video/mp4">
         </video>
-        <div class="video-meta"><h4>Video Four</h4><p>Solutions & call to action</p></div>
+        <div class="video-meta"><h4>Video Four</h4><p>Solutions & inclusion in action</p></div>
+      </div>
+      <div class="video-card reveal">
+        <video controls preload="metadata" playsinline>
+          <source src="video5.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta"><h4>Video Five</h4><p>A message from our team</p></div>
       </div>
     </div>
   </div>
