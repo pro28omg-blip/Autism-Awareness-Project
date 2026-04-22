@@ -84,6 +84,18 @@
   .aims-col ol li::before{content:counter(item,decimal-leading-zero);position:absolute;left:0;top:14px;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:14px;color:#fff}
   .aims-col.aim ol li::before{background:linear-gradient(135deg,#4f46e5,#8b5cf6)}
   .aims-col.obj ol li::before{background:linear-gradient(135deg,#06b6d4,#3b82f6)}
+  .sources{margin-top:60px;padding-top:50px;border-top:1px solid var(--slate-200)}
+  .sources-title{font-size:26px;font-weight:700;color:var(--slate-900);margin-bottom:8px;font-family:'Playfair Display',serif}
+  .sources-sub{color:var(--slate-600);font-size:15px;margin-bottom:26px;max-width:640px}
+  .source-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .source-card{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--slate-200);border-radius:20px;padding:24px;transition:.3s;text-decoration:none}
+  .source-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(15,23,42,.10);border-color:#c7d2fe}
+  .source-logo{flex-shrink:0;width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:800;font-size:18px;color:#fff;letter-spacing:.04em}
+  .source-logo.who{background:linear-gradient(135deg,#0ea5e9,#0369a1)}
+  .source-logo.cdc{background:linear-gradient(135deg,#1e40af,#1e3a8a)}
+  .source-info h4{font-size:16px;font-weight:700;color:var(--slate-900);margin-bottom:4px;font-family:'Inter',sans-serif}
+  .source-info p{color:var(--slate-600);font-size:14px;margin-bottom:8px;line-height:1.55}
+  .source-link{font-size:13px;font-weight:600;color:var(--indigo-600)}
 
   .topics{background:#fff}
   .topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
@@ -188,7 +200,7 @@
     .content-grid.flip .content-text{order:1}
     .content-grid.flip .content-visual{order:2}
     section{padding:70px 20px}
-    .aims-grid{grid-template-columns:1fr}
+    .aims-grid,.source-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -239,32 +251,51 @@
 <section class="aims" id="aims">
   <div class="container">
     <div class="reveal">
-      <div class="eyebrow">Aims & Objectives</div>
-      <h2 class="section-title">What this project sets out to do.</h2>
-      <p class="section-sub">Our goal is to inform, inspire, and create change. Here's exactly what we're aiming for and the steps we're taking to get there.</p>
+      <div class="eyebrow">Our Main Aim & Objective</div>
+      <h2 class="section-title">Why we created this committee.</h2>
+      <p class="section-sub">Our goal is to inform, include, and inspire — using accurate research to spread real understanding of autism in Pakistan and beyond.</p>
     </div>
     <div class="aims-grid">
-      <div class="aims-col aim reveal">
-        <h3>Our Aims</h3>
-        <p class="lead">The big-picture goals guiding our project.</p>
+      <div class="aims-col obj reveal">
+        <h3>Our Objective</h3>
+        <p class="lead">The core reason this committee exists.</p>
         <ol>
-          <li>Raise awareness about autism and what it really means to be on the spectrum.</li>
-          <li>Promote acceptance, inclusion, and respect for neurodiversity in our community.</li>
-          <li>Challenge stereotypes and replace misinformation with facts.</li>
-          <li>Encourage students, families, and schools to support autistic individuals.</li>
-          <li>Show that autism is a global issue that calls for global action.</li>
+          <li>To raise awareness for autism and promote inclusion and acceptance.</li>
+          <li>Challenge myths and reduce stigma by sharing facts and examples from trusted studies.</li>
+          <li>Encourage respectful and inclusive behavior in schools, communities, and online.</li>
         </ol>
       </div>
-      <div class="aims-col obj reveal">
-        <h3>Our Objectives</h3>
-        <p class="lead">The concrete steps we're taking to achieve those aims.</p>
+      <div class="aims-col aim reveal">
+        <h3>Our Aim</h3>
+        <p class="lead">The bigger purpose behind everything we do.</p>
         <ol>
-          <li>Research autism using reliable sources such as the WHO and Autism Speaks.</li>
-          <li>Create clear, engaging content explaining the spectrum and its diversity.</li>
-          <li>Produce short videos that share real stories and key information.</li>
-          <li>Compare global perspectives on autism awareness and support systems.</li>
-          <li>Present practical solutions schools, families, and governments can apply.</li>
+          <li>To properly educate Pakistani citizens about autism using accurate studies — primarily the WHO and CDC.</li>
+          <li>Ensure the information we share is verified, evidence-based, and globally recognized.</li>
+          <li>Build a more understanding society where autistic individuals feel seen, heard, and supported.</li>
         </ol>
+      </div>
+    </div>
+    <div class="sources reveal">
+      <div class="eyebrow" style="margin-top:8px">Our Sources</div>
+      <h3 class="sources-title">Studies & references we trust.</h3>
+      <p class="sources-sub">Every fact and figure on this site is grounded in research from leading global health organizations.</p>
+      <div class="source-grid">
+        <a class="source-card" href="https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders" target="_blank" rel="noopener">
+          <div class="source-logo who">WHO</div>
+          <div class="source-info">
+            <h4>World Health Organization</h4>
+            <p>Global autism statistics, definitions, and recommendations for inclusion and care.</p>
+            <span class="source-link">Read the WHO fact sheet →</span>
+          </div>
+        </a>
+        <a class="source-card" href="https://www.cdc.gov/autism/index.html" target="_blank" rel="noopener">
+          <div class="source-logo cdc">CDC</div>
+          <div class="source-info">
+            <h4>Centers for Disease Control & Prevention</h4>
+            <p>Research-backed data on autism prevalence, signs, screening, and family support.</p>
+            <span class="source-link">Visit CDC autism resources →</span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
