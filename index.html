@@ -1,4 +1,186 @@
-<!-- TEAM -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Autism Awareness Project</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #dbeafe, #fce7f3, #ecfeff);
+    }
+
+    #scoreBoard {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #ffcc33;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      z-index: 9999;
+    }
+
+    .cookie {
+      position: fixed;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .navbar {
+      background: #4a90e2;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar a {
+      color: white;
+      font-weight: bold;
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: linear-gradient(90deg, #4a90e2, #7b5cff);
+      color: white;
+      text-align: center;
+      padding: 60px;
+    }
+
+    .container {
+      width: 85%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      padding: 45px;
+      margin: 25px 0;
+      border-radius: 20px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+    }
+
+    #awareness { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+    #about { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    #issue { background: linear-gradient(135deg, #ffd89b, #19547b); }
+    #solutions { background: linear-gradient(135deg, #00c9ff, #92fe9d); }
+
+    .page {
+      display: none;
+      padding: 40px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.9;
+    }
+
+    img {
+      width: 100%;
+      max-width: 650px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    video {
+      border-radius: 12px;
+    }
+
+    .back-btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #4a90e2;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .team-box {
+      padding: 18px 25px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .t1 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
+    .t2 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+    .t3 { background: linear-gradient(135deg, #f6d365, #fda085); }
+    .t4 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+    .t5 { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+
+  </style>
+</head>
+
+<body>
+
+<div id="scoreBoard">🍪 Cookies: <span id="score">0</span></div>
+
+<div class="navbar">
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('team')">Team</a>
+</div>
+
+<div id="home">
+  <div class="hero">
+    <h1>Autism Awareness Project</h1>
+  </div>
+
+  <div class="container">
+    <div class="card" id="awareness" onclick="showPage('p1')">Awareness</div>
+    <div class="card" id="about" onclick="showPage('p2')">About</div>
+    <div class="card" id="issue" onclick="showPage('p3')">Global Issue</div>
+    <div class="card" id="solutions" onclick="showPage('p4')">Solutions</div>
+  </div>
+</div>
+
+<!-- PAGES -->
+<div id="p1" class="page">
+<h1>Awareness</h1>
+Autism awareness helps people understand neurodiversity and reduce stigma...<br><br>
+More awareness leads to better inclusion in schools and society.<br><br>
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+<div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
+
+<div id="p2" class="page">
+<h1>About</h1>
+Autism is a spectrum condition affecting individuals differently...<br><br>
+This project explores global understanding and inclusion.<br><br>
+<img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
+<div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
+
+<div id="p3" class="page">
+<h1>Global Issue</h1>
+Support for autism varies worldwide...<br><br>
+Some regions lack awareness and diagnosis systems.<br><br>
+<img src="https://images.unsplash.com/photo-1529390079861-591de354faf5">
+<div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
+
+<div id="p4" class="page">
+<h1>Solutions</h1>
+Improving awareness and education can help...<br><br>
+Inclusive systems are key to progress.<br><br>
+<img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178">
+<div class="back-btn" onclick="showPage('home')">Back</div>
+</div>
+
+<!-- TEAM + VIDEOS -->
 <div id="team" class="page">
   <h1>Team Members</h1>
 
@@ -10,24 +192,56 @@
     <div class="team-box t5">Ahmed Mustafa</div>
   </div>
 
-  <!-- 🎥 VIDEOS SECTION -->
   <h2 style="margin-top:40px;">Project Videos</h2>
 
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
     
+    <!-- 🔥 IMPORTANT: USE YOUR REAL GITHUB LINKS -->
     <video width="300" controls>
-      <source src="video1.mp4" type="video/mp4">
+      <source src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/video1.mp4" type="video/mp4">
     </video>
 
     <video width="300" controls>
-      <source src="video2.mp4" type="video/mp4">
+      <source src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/video2.mp4" type="video/mp4">
     </video>
 
     <video width="300" controls>
-      <source src="video3.mp4" type="video/mp4">
+      <source src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/video3.mp4" type="video/mp4">
     </video>
 
   </div>
 
   <div class="back-btn" onclick="showPage('home')">Back</div>
 </div>
+
+<script>
+let score = 0;
+
+function showPage(id){
+  document.querySelectorAll('.page, #home').forEach(e=>e.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+
+function spawnCookie(){
+  const c=document.createElement("div");
+  c.className="cookie";
+  c.innerHTML="🍪";
+
+  c.style.top=Math.random()*80+"%";
+  c.style.left=Math.random()*80+"%";
+
+  c.onclick=function(){
+    score++;
+    document.getElementById("score").innerText=score;
+    c.remove();
+  }
+
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),5000);
+}
+
+setInterval(spawnCookie,25000);
+</script>
+
+</body>
+</html>
