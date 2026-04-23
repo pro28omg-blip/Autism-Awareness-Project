@@ -169,9 +169,9 @@
   .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:10px}
   .video-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;transition:.3s;}
   .video-card:hover{transform:translateY(-4px);border-color:rgba(165,180,252,.5)}
-  .video-card video{width:100%;display:block;background:#000;aspect-ratio:16/9;object-fit:cover}
+  .video-card video{width:100%;display:block;background:#000;aspect-ratio:9/16;object-fit:contain}
   .video-meta{padding:18px 20px}
-  .video-meta h4{font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:4px}
+  .video-meta h4{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
   .video-meta p{font-size:13px;color:#94a3b8}
 
   .cta-section{padding:90px 24px;background:linear-gradient(135deg,#4f46e5 0%,#8b5cf6 50%,#ec4899 100%);color:#fff;text-align:center;position:relative;overflow:hidden;}
@@ -419,3 +419,83 @@
       <div class="member reveal"><div class="avatar">M</div><h4>Mustafa Ghazanfar</h4><span>Web Developer · Writer</span></div>
       <div class="member reveal"><div class="avatar">Z</div><h4>Zayan</h4><span>Interviewer</span></div>
       <div class="member reveal"><div class="avatar">A</div><h4>Ahmed</h4><span>Helper</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="videos" id="videos">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Project Videos</div>
+      <h2 class="section-title">Hear it in our own words.</h2>
+      <p class="section-sub">Short introduction videos from each member of our team.</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card reveal">
+        <video controls preload="metadata" playsinline>
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta"><h4>This is Mustafa</h4><p>Web Developer · Writer</p></div>
+      </div>
+      <div class="video-card reveal">
+        <video controls preload="metadata" playsinline>
+          <source src="video2.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta"><h4>This is Zayan</h4><p>Interviewer</p></div>
+      </div>
+      <div class="video-card reveal">
+        <video controls preload="metadata" playsinline>
+          <source src="video3.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta"><h4>This is Hassan</h4><p>Editor</p></div>
+      </div>
+      <div class="video-card reveal">
+        <video controls preload="metadata" playsinline>
+          <source src="video4.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta"><h4>This is Ahmed</h4><p>Helper</p></div>
+      </div>
+      <div class="video-card reveal">
+        <video controls preload="metadata" playsinline>
+          <source src="video5.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta"><h4>This is Arham</h4><p>Social Media Manager · Digital Creator</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Awareness starts with one conversation.</h2>
+  <p>Share this project. Talk about autism. Listen to autistic voices. Every small action helps build a world that includes everyone.</p>
+  <a href="#top" class="btn">Back to Top ↑</a>
+</section>
+
+<footer>
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-name">Autism Awareness Project</div>
+  </div>
+  <p>An IGCSE Global Perspectives student project on autism, inclusion, and neurodiversity.</p>
+  <p class="small">© 2026 — Built with care by the project team.</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) nav.style.boxShadow = '0 4px 20px rgba(15,23,42,.06)';
+    else nav.style.boxShadow = 'none';
+  });
+</script>
+</body>
+</html>
