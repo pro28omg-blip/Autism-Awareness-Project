@@ -272,44 +272,6 @@
 
     .about-visual p { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--fg); }
 
-    .videos-header { text-align: center; margin-bottom: 3rem; }
-
-    .coming-soon-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      padding: 0.5rem 1.2rem;
-      border-radius: var(--radius);
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .videos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-
-    .video-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .video-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-
-    .video-embed { position: relative; width: 100%; padding-top: 56.25%; background: var(--muted); }
-
-    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-
-    .video-label { padding: 1.2rem 1.4rem; }
-
-    .video-label .skel-title { height: 0.9rem; width: 60%; background: var(--muted); border-radius: 4px; margin-bottom: 0.6rem; }
-
-    .video-label .skel-sub { height: 0.75rem; width: 85%; background: var(--muted); border-radius: 4px; }
-
     #facts {
       background: var(--card);
       border-top: 1px solid var(--card-border);
@@ -473,7 +435,6 @@
     }
 
     @media (max-width: 640px) {
-      .videos-grid { grid-template-columns: 1fr; }
       .facts-grid { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -491,7 +452,6 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#videos">Videos</a></li>
         <li><a href="#facts">Facts</a></li>
         <li><a href="#support">Support</a></li>
         <li><a href="#team">Our Team</a></li>
@@ -535,41 +495,6 @@
         <div class="about-visual reveal reveal-delay-2">
           <span class="infinity-big">♾</span>
           <p>Every mind is unique.<br>Every mind is valued.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEOS -->
-  <section id="videos">
-    <div class="container">
-      <div class="videos-header reveal">
-        <span class="section-tag tag-teal">▶ Educational Videos</span>
-        <h2 class="section-title">Our Video Collection</h2>
-        <p class="section-subtitle">Curated videos to help you better understand the autistic experience.</p>
-        <div class="coming-soon-badge">▶ Videos coming soon — check back!</div>
-      </div>
-      <div class="videos-grid">
-        <!-- VIDEO 1: Replace ScMzIvxBSi4 with your YouTube video ID -->
-        <div class="video-card reveal reveal-delay-1">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="video-label"><div class="skel-title"></div><div class="skel-sub"></div></div>
-        </div>
-        <!-- VIDEO 2: Replace yEb2r_iF2Qk with your YouTube video ID -->
-        <div class="video-card reveal reveal-delay-2">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/yEb2r_iF2Qk" title="Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="video-label"><div class="skel-title"></div><div class="skel-sub"></div></div>
-        </div>
-        <!-- VIDEO 3: Replace vBz1H7vj0mQ with your YouTube video ID -->
-        <div class="video-card reveal reveal-delay-3">
-          <div class="video-embed">
-            <iframe src="https://www.youtube.com/embed/vBz1H7vj0mQ" title="Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="video-label"><div class="skel-title"></div><div class="skel-sub"></div></div>
         </div>
       </div>
     </div>
